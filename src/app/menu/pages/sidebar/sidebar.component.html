@@ -1,0 +1,19 @@
+<div class="d-flex">
+    <div class="bg-dark border-right p-3" id="sidebar">
+        <div>
+            <h3 class="text-light">
+                Perfil
+                <img class="float-end" id="imgPerfil" src="https://cdn.icon-icons.com/icons2/2483/PNG/512/user_icon_149851.png">
+            </h3>
+        </div>
+        <hr>
+        <div class="list-group list-reset">
+            <button class="btn btn-info mb-3" routerLink="docente-principal">Actualizar Informacion</button>
+            <button class="btn btn-info mb-3" routerLink="materias">Calificaciones</button>
+            <button class="btn btn-info mb-3" (click)="navegar()">Cerrar Sesion</button>
+        </div>
+    </div>
+    <div class="container">
+        <router-outlet></router-outlet>
+    </div>
+</div>
