@@ -8,7 +8,8 @@ import { Router } from '@angular/router';
 })
 export class SidebarComponent {
   constructor(private router:Router){}
-  navegar(){
+  closeSesion(){
     this.router.navigate(['/auth/login'])
   }
+
 }
