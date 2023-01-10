@@ -45,7 +45,6 @@ export class CalificacionesComponent implements OnInit{
     console.log(this.desempenio)
     console.log(this.calif)
     console.log(this.ids)
-
   }
 
   makePost(){

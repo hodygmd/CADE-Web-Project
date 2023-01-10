@@ -7,8 +7,6 @@ import {ApiServiceService} from "../../../api-service.service";
   styleUrls: ['./docente-principal.component.css']
 })
 export class DocentePrincipalComponent implements OnInit{
-  nombreAdministrativo:any=localStorage.getItem("nombreAdministrativo")
-
   get respuesta():any{
     return this.service.respuesta
   }

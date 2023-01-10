@@ -22,8 +22,12 @@ export class LoginComponent {
     if(this.flag){
       console.log(this.respuesta)
       localStorage.setItem("idDocente",this.respuesta.id)
-      localStorage.setItem("nombreAdministrativo",this.respuesta.nombreAdministrativo)
-      this.router.navigate(['/menu/sidebar'])
+      if(this.respuesta.idRolFk.id=="2"){
+        this.router.navigate(['/menu/sidebar'])
+      }else if(this.respuesta.idRolFk.id=="3"){
+        this.router.navigate(['/admin/sidebar'])
+      }
+
     }
   }
 }

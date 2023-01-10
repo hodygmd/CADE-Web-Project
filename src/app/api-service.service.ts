@@ -54,4 +54,7 @@ export class ApiServiceService {
         console.log("no se pudo master")
     })
   }
+  putUpdateAdmin(){
+
+  }
 }
