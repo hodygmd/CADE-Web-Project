@@ -8,6 +8,8 @@ import { ValidarCargasComponent } from './pages/validar-cargas/validar-cargas.co
 import { SidebarComponent } from './pages/sidebar/sidebar.component';
 import {AdminRoutingModule} from "./admin-routing.module";
 import { ActualizarAdminComponent } from './pages/actualizar-admin/actualizar-admin.component';
+import { SemestresComponent } from './pages/semestres/semestres.component';
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -17,11 +19,13 @@ import { ActualizarAdminComponent } from './pages/actualizar-admin/actualizar-ad
     CargasComponent,
     ValidarCargasComponent,
     SidebarComponent,
-    ActualizarAdminComponent
+    ActualizarAdminComponent,
+    SemestresComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

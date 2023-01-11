@@ -8,6 +8,7 @@ import {CarrerasComponent} from "./pages/carreras/carreras.component";
 import {GruposComponent} from "./pages/grupos/grupos.component";
 import {ValidarCargasComponent} from "./pages/validar-cargas/validar-cargas.component";
 import {ActualizarAdminComponent} from "./pages/actualizar-admin/actualizar-admin.component";
+import {SemestresComponent} from "./pages/semestres/semestres.component";
 
 const routes: Routes=[
   {path: '',
@@ -18,6 +19,7 @@ const routes: Routes=[
       {path: 'cargas',component:CargasComponent},
       {path: 'carreras',component:CarrerasComponent},
       {path: 'grupos',component:GruposComponent},
+      {path: 'semestres',component:SemestresComponent},
       {path: 'validar-cargas',component:ValidarCargasComponent},
       {path: '**',redirectTo:'admin-principal'}
     ]}

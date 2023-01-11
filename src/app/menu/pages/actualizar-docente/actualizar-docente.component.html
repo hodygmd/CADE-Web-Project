@@ -8,29 +8,21 @@
     <hr>
   </div>
   <div class="d-flex flex-column mt-5">
-    <div class="text-center mt-5">
-      <label for="txtTelefono">TELEFONO NUEVO</label>
-    </div>
     <div class="text-center mb-5">
-      <input type="tel" placeholder="TELEFONO" #txtTelefono id="txtTelefono">
-    </div>
-    <div class="text-center mt-3">
-      <label for="txtCorreo">CORREO NUEVO</label>
+      <label for="txtTelefono">TELEFONO NUEVO</label><br>
+      <input type="number" placeholder="TELEFONO" #txtTelefono id="txtTelefono" value="{{respuesta.telefonoAdministrativo}}">
     </div>
     <div class="text-center mb-5" >
-      <input type="email" placeholder="CORREO" #txtCorreo id="txtCorreo">
-    </div>
-    <div class="text-center mt-3">
-      <label for="txtDireccion">DIRECCION NUEVA</label>
+      <label for="txtCorreo">CORREO NUEVO</label><br>
+      <input class="text-uppercase" type="email" placeholder="CORREO" #txtCorreo id="txtCorreo" value="{{respuesta.correoAdministrativo}}">
     </div>
     <div class="text-center mb-5">
-      <input type="text" placeholder="DIRECCION" #txtDireccion id="txtDireccion">
-    </div>
-    <div class="text-center mt-3">
-      <label for="txtContrasenia">CONTRASEÑA NUEVA</label>
+      <label for="txtDireccion">DIRECCION NUEVA</label><br>
+      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion id="txtDireccion" value="{{respuesta.direccionAdministrativo}}">
     </div>
     <div class="text-center mb-5">
-      <input type="password" placeholder="CONTRASEÑA" #txtContrasenia id="txtContrasenia">
+      <label for="txtContrasenia">CONTRASEÑA NUEVA</label><br>
+      <input type="password" placeholder="CONTRASEÑA" #txtContrasenia id="txtContrasenia" value="{{respuesta.contraseniaAdministrativo}}">
     </div>
   </div>
   <hr>

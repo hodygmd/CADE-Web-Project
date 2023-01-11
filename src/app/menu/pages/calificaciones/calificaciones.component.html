@@ -27,7 +27,7 @@
         <td>{{i.numeroControlFk.ape1Alumno}}</td>
         <td>{{i.numeroControlFk.ape2Alumno}}</td>
         <td>{{i.numeroControlFk.nombreAlumno}}</td>
-        <td><input type="number" (keyup.enter)="getPerformance(txtCalificacion.value,j)" placeholder="0" #txtCalificacion></td>
+        <td><input type="number" (keydown.tab)="getPerformance(txtCalificacion.value,j)" (keyup.enter)="getPerformance(txtCalificacion.value,j)" placeholder="0" #txtCalificacion></td>
         <td>{{desempenio[j]}}</td>
       </tr>
       </tbody>

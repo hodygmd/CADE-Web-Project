@@ -2,9 +2,9 @@
     <div class="container">
         <section class="form-login">
             <h5>Formulario Login</h5>
-            <input class="controls" type="text" placeholder="Usuario" #txtNombre>
+            <input class="controls text-uppercase" type="text" placeholder="Usuario" #txtNombre>
             <input class="controls" type="password" #txtContra>
-            <button class="botton text-center" (click)="sesion(txtNombre.value,txtContra.value)">Ingresar</button>
+            <button class="btn botton text-center" (click)="sesion(txtNombre.value,txtContra.value)">Ingresar</button>
             <p><a href="#">¿Olvidaste tu Contraseña</a></p>
         </section>
     </div>

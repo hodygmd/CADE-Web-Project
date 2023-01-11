@@ -19,13 +19,13 @@
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th scope="row"></th>
-        <td>1</td>
-        <td>J</td>
-        <td>J</td>
-        <td>J</td>
-        <td><button class="btn btn-success" routerLink="/admin/validar-cargas">CARGA</button></td>
+      <tr *ngFor="let i of alumno;let j=index">
+        <th scope="row">{{j+1}}</th>
+        <td>{{i.numeroControlFk.id}}</td>
+        <td>{{i.numeroControlFk.ape1Alumno}}</td>
+        <td>{{i.numeroControlFk.ape2Alumno}}</td>
+        <td>{{i.numeroControlFk.nombreAlumno}}</td>
+        <td><button class="btn btn-success" (click)="goSemester(i.numeroControlFk.id,i.numeroControlFk.nombreAlumno)">SEMESTRES</button></td>
       </tr>
       </tbody>
     </table>
