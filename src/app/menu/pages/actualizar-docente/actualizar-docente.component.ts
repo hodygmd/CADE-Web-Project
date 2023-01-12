@@ -28,22 +28,12 @@ export class ActualizarDocenteComponent implements OnInit{
   }
 
   save(telefono:string,correo:string,direccion:string,contrasenia:string){
-    /*if(telefono==""||correo==""||direccion==""||contrasenia==""){
-      if(telefono==""){
-        telefono=this.datos[0]
-      }
-      if(correo==""){
-        telefono=this.datos[1]
-      }
-      if(direccion==""){
-        telefono=this.datos[2]
-      }
-      if(contrasenia==""){
-        telefono=this.datos[3]
-      }
-    }*/
-    this.service.putUpdateAdmin(new UpdateData(telefono,correo,direccion,contrasenia),this.idDocente)
-    this.update()
+    if(telefono==""||correo==""||direccion==""||contrasenia==""){
+      alert("LLENE TODOS LOS CAMPOS")
+    }else {
+      this.service.putUpdateAdmin(new UpdateData(telefono,correo,direccion,contrasenia),this.idDocente)
+      this.update()
+    }
   }
   update(){
     this.datos[0]=this.updated.telefonoAdministrativo

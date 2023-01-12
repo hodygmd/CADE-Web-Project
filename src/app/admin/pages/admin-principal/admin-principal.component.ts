@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
 
 @Component({
@@ -6,9 +6,13 @@ import {ApiServiceService} from "../../../api-service.service";
   templateUrl: './admin-principal.component.html',
   styleUrls: ['./admin-principal.component.css']
 })
-export class AdminPrincipalComponent {
+export class AdminPrincipalComponent implements OnInit{
   get respuesta():any{
     return this.service.respuesta
   }
   constructor(private service:ApiServiceService) {}
+
+  ngOnInit(): void {
+    console.log(this.respuesta)
+  }
 }

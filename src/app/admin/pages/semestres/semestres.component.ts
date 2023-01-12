@@ -19,10 +19,16 @@ export class SemestresComponent {
 
   ngOnInit(): void {
     this.service.getSemestre(this.idAlumno)
+    localStorage.removeItem("idSemestre")
   }
 
   goCarga(semestre:string){
     localStorage.setItem("idSemestre",semestre)
     this.router.navigate(['/admin/validar-cargas'])
+  }
+
+  back(){
+    localStorage.removeItem("idAlumno")
+    localStorage.removeItem("nombreAlumno")
   }
 }

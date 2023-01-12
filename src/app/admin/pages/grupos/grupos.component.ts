@@ -18,9 +18,13 @@ export class GruposComponent {
 
   ngOnInit(): void {
     this.service.getGroups(this.idCarrera)
+    localStorage.removeItem("idGrupo")
   }
   getGrupo(idGrupo:string){
     localStorage.setItem("idGrupo",idGrupo)
     this.router.navigate(['/admin/cargas'])
+  }
+  back(){
+    localStorage.removeItem("idCarrera")
   }
 }

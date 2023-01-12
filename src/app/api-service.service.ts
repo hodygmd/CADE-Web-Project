@@ -17,7 +17,6 @@ import {CargaSemestreInterface} from "./carga-semestre-interface";
 })
 export class ApiServiceService {
   public respuesta?: PersonInterface
-  public flag: string = "0"
   public subject?: SubjectInterface[]
   public alumn?: AlumnInterface
   public carrera?:CareerInterface
@@ -36,10 +35,8 @@ export class ApiServiceService {
     this.http.get<PersonInterface>(`${this.urlBase}/administrativo/authv2?nombre=${nombre}&contra=${contra}`)
       .subscribe((resp: PersonInterface) => {
         this.respuesta = resp
-        this.flag = "1"
       }, error => {
         console.log("no se pudo master")
-        this.flag = "0"
       })
   }
 
@@ -63,12 +60,14 @@ export class ApiServiceService {
       })
   }
 
-  setCalificaciones(califcaciones: Calificacion[]) {
-    this.http.post(`${this.urlBase}/administrativo/registro-calificaciones`, califcaciones)
+  setCalificaciones(calificaciones: Calificacion[]) {
+    this.http.post(`${this.urlBase}/administrativo/registro-calificaciones`, calificaciones)
       .subscribe((resp: any) => {
         console.log(resp)
+        alert("CALIFICACIONES ASIGNADAS")
       }, error => {
         console.log("no se pudo master")
+        alert("ERROR AL ASIGNAR CALIFICACIONES")
       })
   }
 

@@ -36,7 +36,7 @@ export class CalificacionesComponent implements OnInit{
     } else if(cal>=70){
       this.desempenio[i]="SUFICIENTE"
     }else{
-      this.desempenio[i]="INSUFICIENTE"
+      this.desempenio[i]="NA"
     }
     this.calif[i]=cal
     for(let j=0;j<this.alumn.length;j++){
@@ -56,6 +56,10 @@ export class CalificacionesComponent implements OnInit{
     }
     this.service.setCalificaciones(this.calificaciones)
     console.log(this.calificaciones)
+  }
+  back(){
+    localStorage.removeItem("idGrupo")
+    localStorage.removeItem("idMateria")
   }
   calificaciones: Calificacion[]=[]
 }

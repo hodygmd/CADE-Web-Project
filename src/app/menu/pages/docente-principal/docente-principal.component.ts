@@ -14,6 +14,8 @@ export class DocentePrincipalComponent implements OnInit{
   }
   ngOnInit(): void {
     console.log(this.respuesta)
+    localStorage.removeItem("idGrupo")
+    localStorage.removeItem("idMateria")
   }
 
 }

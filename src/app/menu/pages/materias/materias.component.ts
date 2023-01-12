@@ -20,6 +20,8 @@ export class MateriasComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    localStorage.removeItem("idAlumno")
+    localStorage.removeItem("idMateria")
     this.service.subjects(this.idDocente)
   }
 

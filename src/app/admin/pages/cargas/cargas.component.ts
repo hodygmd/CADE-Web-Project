@@ -17,6 +17,8 @@ export class CargasComponent {
   }
 
   ngOnInit(): void {
+    localStorage.removeItem("idAlumno")
+    localStorage.removeItem("nombreAlumno")
     this.service.getAlumns(this.idGrupo)
   }
 
@@ -24,5 +26,9 @@ export class CargasComponent {
     localStorage.setItem("idAlumno",idAlumno)
     localStorage.setItem("nombreAlumno",nombreAlumno)
     this.router.navigate(['/admin/semestres'])
+  }
+
+  back(){
+    localStorage.removeItem("idGrupo")
   }
 }

@@ -42,4 +42,7 @@ export class ValidarCargasComponent {
     "Validar Carga",
     "Rechazar Carga"
   ]
+  back(){
+    localStorage.removeItem("idSemestre")
+  }
 }
