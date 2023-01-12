@@ -7,6 +7,8 @@ import {ApiServiceService} from "../../../api-service.service";
   styleUrls: ['./admin-principal.component.css']
 })
 export class AdminPrincipalComponent implements OnInit{
+  nombre:any=localStorage.getItem("nombre")
+  contra:any=localStorage.getItem("contrasenia")
   get respuesta():any{
     return this.service.respuesta
   }
@@ -14,5 +16,6 @@ export class AdminPrincipalComponent implements OnInit{
 
   ngOnInit(): void {
     console.log(this.respuesta)
+    this.service.auth(this.nombre,this.contra)
   }
 }

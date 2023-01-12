@@ -7,6 +7,8 @@ import {ApiServiceService} from "../../../api-service.service";
   styleUrls: ['./docente-principal.component.css']
 })
 export class DocentePrincipalComponent implements OnInit{
+  nombre:any=localStorage.getItem("nombre")
+  contra:any=localStorage.getItem("contrasenia")
   get respuesta():any{
     return this.service.respuesta
   }
@@ -16,6 +18,7 @@ export class DocentePrincipalComponent implements OnInit{
     console.log(this.respuesta)
     localStorage.removeItem("idGrupo")
     localStorage.removeItem("idMateria")
+    this.service.auth(this.nombre,this.contra)
   }
 
 }
