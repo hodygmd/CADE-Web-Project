@@ -11,6 +11,7 @@ import {CareerInterface} from "./career-interface";
 import {GroupInterface} from "./group-interface";
 import {AlumnoCargaInterface} from "./alumno-carga-interface";
 import {CargaSemestreInterface} from "./carga-semestre-interface";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -28,15 +29,25 @@ export class ApiServiceService {
 
   urlBase: string = "http://ec2-3-139-56-194.us-east-2.compute.amazonaws.com:8081"
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private router:Router) {
   }
 
   auth(nombre: string, contra: string) {
     this.http.get<PersonInterface>(`${this.urlBase}/administrativo/authv2?nombre=${nombre}&contra=${contra}`)
       .subscribe((resp: PersonInterface) => {
         this.respuesta = resp
+        console.log(this.respuesta)
+        if (this.respuesta.idRolFk.id == 2) {
+          this.router.navigate(['/menu/sidebar'])
+        } else if (this.respuesta.idRolFk.id == 3) {
+          this.router.navigate(['/admin/sidebar'])
+        }
+        localStorage.setItem("idDocente", this.respuesta.id.toString())
+        localStorage.setItem("nombre",this.respuesta.nombreAdministrativo)
+        localStorage.setItem("contrasenia",this.respuesta.contraseniaAdministrativo)
       }, error => {
         console.log("no se pudo master")
+        alert("USUARIO O CONTRASEÑA ERRONEOS")
       })
   }
 

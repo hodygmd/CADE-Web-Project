@@ -24,7 +24,7 @@ export interface IDRolFk {
   statusRol: string;
 }
 
-// Converts JSON strings to/from your types
+/*// Converts JSON strings to/from your types
 // and asserts the results of JSON.parse at runtime
 export class Convert {
   public static toWelcome(json: string): PersonInterface {
@@ -193,4 +193,4 @@ const typeMap: any = {
     {json: "descripcionRol", js: "descripcionRol", typ: ""},
     {json: "statusRol", js: "statusRol", typ: ""},
   ], false),
-};
+};*/

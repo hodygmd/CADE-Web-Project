@@ -6,11 +6,12 @@
     </h3>
     <hr>
   </div>
-  <div>
-    <button class="btn btn-success col-2 p-3 m-3" (click)="getCarrera(i.id)" *ngFor="let i of carrera">{{i.id}}<br>
+  <div class="mb-3">
+    <button class="btn btn-primary text-dark buttons btn-carrera text-wrap col-2 p-3 m-3" (click)="getCarrera(i.id)" *ngFor="let i of carrera">{{i.id}}<br>
     {{i.descripcionCarrera}}</button>
   </div>
-  <div class="d-flex sticky-bottom justify-content-center">
+  <hr>
+  <div class="d-flex sticky-bottom justify-content-center mt-3">
     <button class="btn btn-secondary" routerLink="/admin/admin-principal">Regresar</button>
   </div>
 </div>

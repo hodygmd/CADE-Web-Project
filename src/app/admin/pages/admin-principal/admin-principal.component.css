@@ -1,1 +1,8 @@
-
+.info{
+  background-color: #854553;
+  box-shadow: 7px 13px 37px #000;
+}
+.info-content{
+  background-color: rgb(134, 188, 236);
+  box-shadow: 7px 13px 20px #000;
+}

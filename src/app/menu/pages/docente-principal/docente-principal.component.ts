@@ -15,7 +15,6 @@ export class DocentePrincipalComponent implements OnInit{
   constructor(private service:ApiServiceService) {
   }
   ngOnInit(): void {
-    console.log(this.respuesta)
     localStorage.removeItem("idGrupo")
     localStorage.removeItem("idMateria")
     this.service.auth(this.nombre,this.contra)

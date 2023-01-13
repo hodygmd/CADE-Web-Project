@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {ApiServiceService} from "./api-service.service";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CADE';
+
+  /*constructor(private service: ApiServiceService) {
+  }
+
+  get respuesta(): any {
+    return this.service.respuesta
+  }
+
+  sesion(nombre: string, contra: string) {
+    this.service.auth(nombre, contra)
+  }*/
 }

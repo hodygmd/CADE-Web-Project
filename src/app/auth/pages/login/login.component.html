@@ -2,7 +2,7 @@
     <div class="container">
         <section class="form-login">
             <h5>LOGIN</h5>
-            <input class="controls text-uppercase" (keydown.enter)="sesion(txtNombre.value,txtContra.value)" type="text" placeholder="Usuario" #txtNombre>
+            <input class="controls text-uppercase" (keyup.enter)="sesion(txtNombre.value,txtContra.value)" type="text" placeholder="Usuario" #txtNombre>
             <input class="controls" (keydown.enter)="sesion(txtNombre.value,txtContra.value)" required type="password" #txtContra>
             <button class="btn botton text-center" (click)="sesion(txtNombre.value,txtContra.value)" required>INGRESAR</button>
             <p><a href="#">¿Olvidaste tu Contraseña</a></p>
