@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,OnInit,OnDestroy } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
 
 @Component({
@@ -7,14 +7,12 @@ import {ApiServiceService} from "../../../api-service.service";
   styleUrls: ['./admin-principal.component.css']
 })
 export class AdminPrincipalComponent implements OnInit{
-  nombre:any=localStorage.getItem("nombre")
-  contra:any=localStorage.getItem("contrasenia")
   get respuesta():any{
     return this.service.respuesta
   }
   constructor(private service:ApiServiceService) {}
 
   ngOnInit(): void {
-    this.service.auth(this.nombre,this.contra)
+    this.service.auth(this.respuesta.nombreAdministrativo,this.respuesta.contraseniaAdministrativo)
   }
 }

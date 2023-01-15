@@ -9,6 +9,10 @@ import {GruposComponent} from "./pages/grupos/grupos.component";
 import {ValidarCargasComponent} from "./pages/validar-cargas/validar-cargas.component";
 import {ActualizarAdminComponent} from "./pages/actualizar-admin/actualizar-admin.component";
 import {SemestresComponent} from "./pages/semestres/semestres.component";
+import {UsuariosComponent} from "./pages/usuarios/usuarios.component";
+import {DocentesComponent} from "./pages/docentes/docentes.component";
+import {AdministrativosComponent} from "./pages/administrativos/administrativos.component";
+import {DocentesCCarreraComponent} from "./pages/docentes-ccarrera/docentes-ccarrera.component";
 
 const routes: Routes=[
   {path: '',
@@ -21,6 +25,10 @@ const routes: Routes=[
       {path: 'grupos',component:GruposComponent},
       {path: 'semestres',component:SemestresComponent},
       {path: 'validar-cargas',component:ValidarCargasComponent},
+      {path: 'usuarios',component:UsuariosComponent},
+      {path: 'docentes',component:DocentesComponent},
+      {path: 'administrativos',component:AdministrativosComponent},
+      {path: 'docentes-ccarrera',component:DocentesCCarreraComponent},
       {path: '**',redirectTo:'admin-principal'}
     ]}
 ]

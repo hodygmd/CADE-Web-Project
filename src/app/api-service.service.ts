@@ -26,6 +26,8 @@ export class ApiServiceService {
   public updated?: UpdateData
   public carga_semestre?: CargaSemestreInterface[]
   public semestre?: Array<string>
+  public emptyTeacher?: PersonInterface
+  public teacherCareer?: PersonInterface
 
   urlBase: string = "http://ec2-3-139-56-194.us-east-2.compute.amazonaws.com:8081"
 
@@ -43,8 +45,6 @@ export class ApiServiceService {
           this.router.navigate(['/admin/sidebar'])
         }
         localStorage.setItem("idDocente", this.respuesta.id.toString())
-        localStorage.setItem("nombre",this.respuesta.nombreAdministrativo)
-        localStorage.setItem("contrasenia",this.respuesta.contraseniaAdministrativo)
       }, error => {
         console.log("no se pudo master")
         alert("USUARIO O CONTRASEÑA ERRONEOS")
@@ -147,6 +147,33 @@ export class ApiServiceService {
       },error => {
         console.log("no se pudo master")
         alert("ERROR AL VALIDAR CARGA")
+      })
+  }
+  postAdmin(){
+    this.http.post(`${this.urlBase}/administrativo/registro`,'')
+      .subscribe((resp:any)=>{
+        console.log(resp)
+        this.carga_semestre=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  getEmptyTeacher(){
+    this.http.get<PersonInterface>(`${this.urlBase}/administrativo/docentes-vacios`)
+      .subscribe((resp:PersonInterface)=>{
+        console.log(resp)
+        this.emptyTeacher=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  getTecaherCareer(carrera:string){
+    this.http.get<PersonInterface>(`${this.urlBase}/administrativo/docente_carrera/${carrera}`)
+      .subscribe((resp:PersonInterface)=>{
+        console.log(resp)
+        this.teacherCareer=resp
+      },error => {
+        console.log("no se pudo master")
       })
   }
 }

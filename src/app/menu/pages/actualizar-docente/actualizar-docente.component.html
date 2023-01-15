@@ -10,19 +10,19 @@
   <div class="d-flex flex-column mt-5">
     <div class="text-center mb-5">
       <label for="txtTelefono">TELEFONO NUEVO</label><br>
-      <input type="number" placeholder="TELEFONO" #txtTelefono id="txtTelefono" value="{{respuesta.telefonoAdministrativo}}">
+      <input type="number" placeholder="TELEFONO" #txtTelefono (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtTelefono" value="{{respuesta.telefonoAdministrativo}}">
     </div>
     <div class="text-center mb-5" >
       <label for="txtCorreo">CORREO NUEVO</label><br>
-      <input class="text-uppercase" type="email" placeholder="CORREO" #txtCorreo id="txtCorreo" value="{{respuesta.correoAdministrativo}}">
+      <input class="text-uppercase" type="email" placeholder="CORREO" #txtCorreo (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtCorreo" value="{{respuesta.correoAdministrativo}}">
     </div>
     <div class="text-center mb-5">
       <label for="txtDireccion">DIRECCION NUEVA</label><br>
-      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion id="txtDireccion" value="{{respuesta.direccionAdministrativo}}">
+      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtDireccion" value="{{respuesta.direccionAdministrativo}}">
     </div>
     <div class="text-center mb-5">
       <label for="txtContrasenia">CONTRASEÑA NUEVA</label><br>
-      <input type="password" placeholder="CONTRASEÑA" #txtContrasenia id="txtContrasenia" value="{{respuesta.contraseniaAdministrativo}}">
+      <input type="password" #txtContrasenia (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtContrasenia" value="{{respuesta.contraseniaAdministrativo}}">
     </div>
   </div>
   <hr>

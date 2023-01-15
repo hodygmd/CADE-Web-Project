@@ -10,6 +10,10 @@ import {AdminRoutingModule} from "./admin-routing.module";
 import { ActualizarAdminComponent } from './pages/actualizar-admin/actualizar-admin.component';
 import { SemestresComponent } from './pages/semestres/semestres.component';
 import {FormsModule} from "@angular/forms";
+import { UsuariosComponent } from './pages/usuarios/usuarios.component';
+import { DocentesComponent } from './pages/docentes/docentes.component';
+import { AdministrativosComponent } from './pages/administrativos/administrativos.component';
+import { DocentesCCarreraComponent } from './pages/docentes-ccarrera/docentes-ccarrera.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import {FormsModule} from "@angular/forms";
     ValidarCargasComponent,
     SidebarComponent,
     ActualizarAdminComponent,
-    SemestresComponent
+    SemestresComponent,
+    UsuariosComponent,
+    DocentesComponent,
+    AdministrativosComponent,
+    DocentesCCarreraComponent
   ],
   imports: [
     CommonModule,

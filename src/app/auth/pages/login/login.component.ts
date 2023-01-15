@@ -17,7 +17,6 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
     localStorage.clear()
-
   }
 
   sesion(nombre: string, contra: string) {
@@ -26,27 +25,5 @@ export class LoginComponent implements OnInit {
     }else {
       this.service.auth(nombre, contra)
     }
-    /*localStorage.setItem("idDocente", this.respuesta.id)
-    localStorage.setItem("nombre",this.respuesta.nombreAdministrativo)
-    localStorage.setItem("contrasenia",this.respuesta.contraseniaAdministrativo)*/
-    /*if(nombre==""||contra==""){
-
-      if(nombre==""){
-        alert("INGRESA nom")
-      }else if(contra==""){
-        alert("INGRESA contra")
-      }
-    }else{
-      this.service.auth(nombre,contra)
-      localStorage.setItem("idDocente", this.respuesta.id)
-      localStorage.setItem("nombre",this.respuesta.nombreAdministrativo)
-      localStorage.setItem("contrasenia",this.respuesta.contraseniaAdministrativo)
-      this.nav(this.respuesta.idRolFk.id)
-      if (this.respuesta.idRolFk.id == "2") {
-        this.router.navigate(['/menu/sidebar'])
-      } else if (this.respuesta.idRolFk.id == "3") {
-        this.router.navigate(['/admin/sidebar'])
-      }
-    }*/
   }
 }

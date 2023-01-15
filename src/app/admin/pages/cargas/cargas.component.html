@@ -7,7 +7,7 @@
     <hr>
   </div>
   <div class="mb-3">
-    <table class="table">
+    <table class="table table-striped">
       <thead>
       <tr>
         <th scope="col">#</th>
@@ -18,7 +18,7 @@
         <th scope="col">VER CARGA</th>
       </tr>
       </thead>
-      <tbody>
+      <tbody class="table-group-divider">
       <tr *ngFor="let i of alumno;let j=index">
         <th scope="row">{{j+1}}</th>
         <td>{{i.numeroControlFk.id}}</td>
