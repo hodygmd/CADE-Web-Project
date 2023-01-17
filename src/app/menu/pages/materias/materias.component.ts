@@ -3,7 +3,7 @@ import {Router} from "@angular/router";
 import {HttpClient} from "@angular/common/http";
 import {ApiServiceService} from "../../../api-service.service";
 import {LoginComponent} from "../../../auth/pages/login/login.component";
-import {SubjectInterface} from "../../../subject-interface";
+import {SubjectInterface} from "../../../Interfaces/subject-interface";
 
 @Component({
   selector: 'app-materias',

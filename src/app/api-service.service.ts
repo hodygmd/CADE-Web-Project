@@ -1,17 +1,21 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {PersonInterface} from './person-interface';
+import {PersonInterface} from './Interfaces/person-interface';
 import * as url from "url";
-import {SubjectInterface} from "./subject-interface";
-import {AlumnInterface} from "./alum-interface";
+import {SubjectInterface} from "./Interfaces/subject-interface";
+import {AlumnInterface} from "./Interfaces/alum-interface";
 import {Calificacion} from "./calificacion";
 import * as http from "http";
-import {UpdateData} from "./update-data";
-import {CareerInterface} from "./career-interface";
-import {GroupInterface} from "./group-interface";
-import {AlumnoCargaInterface} from "./alumno-carga-interface";
-import {CargaSemestreInterface} from "./carga-semestre-interface";
+import {UpdateData} from "./Classes/update-data";
+import {CareerInterface} from "./Interfaces/career-interface";
+import {GroupInterface} from "./Interfaces/group-interface";
+import {AlumnoCargaInterface} from "./Interfaces/alumno-carga-interface";
+import {CargaSemestreInterface} from "./Interfaces/carga-semestre-interface";
 import {Router} from "@angular/router";
+import {ClavesCarrera} from "./claves-carrera";
+import {AllSubjects} from "./all-subjects";
+import {AddSubjects} from "./add-subjects";
+import {GruposMateria} from "./grupos-materia";
 
 @Injectable({
   providedIn: 'root'
@@ -28,6 +32,10 @@ export class ApiServiceService {
   public semestre?: Array<string>
   public emptyTeacher?: PersonInterface
   public teacherCareer?: PersonInterface
+  public subjectCareer?: SubjectInterface[]
+  public allSubject?: AllSubjects[]
+  public gruposMateria?:GruposMateria[]
+  public dataDocente?: PersonInterface
 
   urlBase: string = "http://ec2-3-139-56-194.us-east-2.compute.amazonaws.com:8081"
 
@@ -172,6 +180,62 @@ export class ApiServiceService {
       .subscribe((resp:PersonInterface)=>{
         console.log(resp)
         this.teacherCareer=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  postAddTeacherCareer(claves:ClavesCarrera[],idd:string){
+    this.http.post(`${this.urlBase}/administrativo/registro-carrerasd/${idd}/`, claves)
+      .subscribe((resp: any) => {
+        console.log(resp)
+        alert("CARRERAS ASIGNADAS")
+      }, error => {
+        console.log("no se pudo master")
+        alert("ERROR AL ASIGNAR CARRERAS")
+      })
+  }
+  getSubjectsCareer(carrera:string){
+    this.http.get<SubjectInterface[]>(`${this.urlBase}/materias/carrera/${carrera}`)
+      .subscribe((resp:SubjectInterface[])=>{
+        console.log(resp)
+        this.subjectCareer=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  postAddTecaherSubject(idd:string,claves:AddSubjects[]){
+    this.http.post(`${this.urlBase}/administrativo/registro-materiasd/${idd}/`, claves)
+      .subscribe((resp: any) => {
+        console.log(resp)
+        alert("MATERIAS ASIGNADAS")
+      }, error => {
+        console.log("no se pudo master")
+        alert("ERROR AL ASIGNAR MATERIAS")
+      })
+  }
+  getAllSubjects(){
+    this.http.get<AllSubjects[]>(`${this.urlBase}/materias`)
+      .subscribe((resp:AllSubjects[])=>{
+        console.log(resp)
+        this.allSubject=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  getGroupsSubject(carrera:string){
+    this.http.get<GruposMateria[]>(`${this.urlBase}/horario/grupos/carrerass/${carrera}`)
+      .subscribe((resp:GruposMateria[])=>{
+        console.log(resp)
+        this.gruposMateria=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  getDataDocente(id_admin:string){
+    this.http.get<PersonInterface>(`${this.urlBase}/administrativo/id/${id_admin}`)
+      .subscribe((resp:PersonInterface)=>{
+        console.log(resp)
+        this.dataDocente=resp
       },error => {
         console.log("no se pudo master")
       })

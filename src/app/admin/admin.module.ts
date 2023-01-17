@@ -14,6 +14,11 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { DocentesComponent } from './pages/docentes/docentes.component';
 import { AdministrativosComponent } from './pages/administrativos/administrativos.component';
 import { DocentesCCarreraComponent } from './pages/docentes-ccarrera/docentes-ccarrera.component';
+import { AsignarCarrerasComponent } from './pages/asignar-carreras/asignar-carreras.component';
+import { AsignarMateriasComponent } from './pages/asignar-materias/asignar-materias.component';
+import { GruposAddMateriasComponent } from './pages/grupos-add-materias/grupos-add-materias.component';
+import { ActualizarDocentesComponent } from './pages/actualizar-docentes/actualizar-docentes.component';
+import { AddDocenteComponent } from './pages/add-docente/add-docente.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +33,12 @@ import { DocentesCCarreraComponent } from './pages/docentes-ccarrera/docentes-cc
     UsuariosComponent,
     DocentesComponent,
     AdministrativosComponent,
-    DocentesCCarreraComponent
+    DocentesCCarreraComponent,
+    AsignarCarrerasComponent,
+    AsignarMateriasComponent,
+    GruposAddMateriasComponent,
+    ActualizarDocentesComponent,
+    AddDocenteComponent
   ],
   imports: [
     CommonModule,

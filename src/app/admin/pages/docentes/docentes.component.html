@@ -8,7 +8,7 @@
     <hr>
   </div>
   <div class="mb-3">
-    <button class="btn btn-primary text-dark buttons btn-carrera col-2 p-3 m-3" (click)="next(i.descripcionCarrera)" *ngFor="let i of carrera" routerLink="/admin/docentes-ccarrera">{{i.id}}<br>
+    <button class="btn btn-primary text-dark buttons btn-carrera col-2 p-3 m-3" (click)="next(i.descripcionCarrera,i.id)" *ngFor="let i of carrera" routerLink="/admin/docentes-ccarrera">{{i.id}}<br>
     {{i.descripcionCarrera}}</button>
   </div>
   <hr>
@@ -29,7 +29,7 @@
         <td>{{i.ape1Administrativo}}</td>
         <td>{{i.ape2Administrativo}}</td>
         <td>{{i.nombreAdministrativo}}</td>
-        <td><button class="btn btn-primary text-dark buttons">ASIGNAR CARRERA</button></td>
+        <td><button class="btn btn-primary text-dark buttons" (click)="addCareer(i.id,i.nombreAdministrativo)" routerLink="/admin/asignar-carreras">ASIGNAR CARRERA</button></td>
       </tr>
       </tbody>
     </table>
@@ -38,6 +38,6 @@
   <div class="d-flex sticky-bottom justify-content-between mt-3">
     <button class="btn btn-secondary" routerLink="/admin/admin-principal">Regresar</button>
     <!--<button class="btn btn-secondary">Actualizar</button>!-->
-    <!--<button class="btn btn-secondary" routerLink="/menu/materias">Guardar</button>!-->
+    <button class="btn btn-secondary" routerLink="/admin/add-docente">Nuevo Docente</button>
   </div>
 </div>

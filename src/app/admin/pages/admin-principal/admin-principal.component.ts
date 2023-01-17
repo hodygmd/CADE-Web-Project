@@ -7,12 +7,17 @@ import {ApiServiceService} from "../../../api-service.service";
   styleUrls: ['./admin-principal.component.css']
 })
 export class AdminPrincipalComponent implements OnInit{
-  get respuesta():any{
-    return this.service.respuesta
-  }
+  idDocente:any=localStorage.getItem("idDocente")
+
   constructor(private service:ApiServiceService) {}
 
+  get dataDocente():any{
+    return this.service.dataDocente
+  }
+
   ngOnInit(): void {
-    this.service.auth(this.respuesta.nombreAdministrativo,this.respuesta.contraseniaAdministrativo)
+    this.service.getDataDocente(this.idDocente)
+    console.log(this.dataDocente)
+    /*this.service.auth(this.respuesta.nombreAdministrativo,this.respuesta.contraseniaAdministrativo)*/
   }
 }

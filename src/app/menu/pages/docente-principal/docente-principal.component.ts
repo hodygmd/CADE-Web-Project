@@ -7,15 +7,18 @@ import {ApiServiceService} from "../../../api-service.service";
   styleUrls: ['./docente-principal.component.css']
 })
 export class DocentePrincipalComponent implements OnInit{
-  get respuesta():any{
-    return this.service.respuesta
+  idDocente:any=localStorage.getItem("idDocente")
+
+  constructor(private service:ApiServiceService) {}
+
+  get dataDocente():any{
+    return this.service.dataDocente
   }
-  constructor(private service:ApiServiceService) {
-  }
+
   ngOnInit(): void {
     localStorage.removeItem("idGrupo")
     localStorage.removeItem("idMateria")
-    this.service.auth(this.respuesta.nombreAdministrativo,this.respuesta.contraseniaAdministrativo)
+    this.service.getDataDocente(this.idDocente)
   }
 
 }

@@ -20,4 +20,17 @@ export class DocentesCCarreraComponent implements OnInit{
     this.service.getTecaherCareer(this.idCarrera)
   }
 
+  docente(idDocente:string){
+    localStorage.setItem("idDocenteAddSubject",idDocente)
+  }
+
+  update(idDocente:string){
+    localStorage.setItem("idDocenteAddSubject",idDocente)
+  }
+
+  back(){
+    localStorage.removeItem("idCarrera")
+    localStorage.removeItem("ididCarrera")
+  }
+
 }

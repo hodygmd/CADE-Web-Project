@@ -24,9 +24,14 @@ export class DocentesComponent implements OnInit{
     this.service.getEmptyTeacher()
   }
 
-  next(idCarrera:string){
+  next(idCarrera:string,ididCarrera:string){
     localStorage.setItem("idCarrera",idCarrera)
+    localStorage.setItem("ididCarrera",ididCarrera)
     console.log(idCarrera)
   }
 
+  addCareer(idDocente:string,nomDocente:string){
+    localStorage.setItem("idDocenteAddCareer",idDocente)
+    localStorage.setItem("nomDocente",nomDocente)
+  }
 }

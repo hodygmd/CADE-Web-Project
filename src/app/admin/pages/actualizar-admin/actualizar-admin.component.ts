@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
 import {Calificacion} from "../../../calificacion";
-import {UpdateData} from "../../../update-data";
+import {UpdateData} from "../../../Classes/update-data";
 
 @Component({
   selector: 'app-actualizar-admin',
