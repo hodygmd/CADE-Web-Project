@@ -18,6 +18,5 @@ export class AdminPrincipalComponent implements OnInit{
   ngOnInit(): void {
     this.service.getDataDocente(this.idDocente)
     console.log(this.dataDocente)
-    /*this.service.auth(this.respuesta.nombreAdministrativo,this.respuesta.contraseniaAdministrativo)*/
   }
 }

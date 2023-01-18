@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
-import {AddDocentes} from "../../../Classes/add-docentes";
 import {Router} from "@angular/router";
+import {AddDocentes} from "../../../Classes/add-docentes";
 
 @Component({
-  selector: 'app-add-docente',
-  templateUrl: './add-docente.component.html',
-  styleUrls: ['./add-docente.component.css']
+  selector: 'app-add-administrativo',
+  templateUrl: './add-administrativo.component.html',
+  styleUrls: ['./add-administrativo.component.css']
 })
-export class AddDocenteComponent {
-
+export class AddAdministrativoComponent {
   constructor(private service:ApiServiceService,private router:Router) {
   }
 
@@ -17,10 +16,11 @@ export class AddDocenteComponent {
     if(ape1==""||ape2==""||contra==""||correo==""||direccion==""||nombre==""||telefono==""){
       alert("LLENA TODOS LOS CAMPOS")
     }else{
-      this.service.postAddAdmin(new AddDocentes(ape1,ape2,contra,correo,direccion,"2",nombre,"1",telefono))
-      this.router.navigate(['/admin/docentes'])
+      this.service.postAddAdmin(new AddDocentes(ape1,ape2,contra,correo,direccion,"3",nombre,"1",telefono))
+      this.router.navigate(['/admin/administrativos'])
     }
   }
+
   fieldTextType?: boolean;
 
   toggleFieldTextType() {

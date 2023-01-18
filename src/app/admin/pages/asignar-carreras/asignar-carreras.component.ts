@@ -1,8 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
 import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
-import {Calificacion} from "../../../calificacion";
-import {ClavesCarrera} from "../../../claves-carrera";
+import {Calificacion} from "../../../Classes/calificacion";
+import {ClavesCarrera} from "../../../Classes/claves-carrera";
 import {Router} from "@angular/router";
 
 @Component({

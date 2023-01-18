@@ -19,8 +19,9 @@ export class CarrerasComponent implements OnInit{
     this.service.getCareer()
 
   }
-  getCarrera(idCarrera:string){
+  getCarrera(idCarrera:string,nombreCarrera:string){
     localStorage.setItem("idCarrera",idCarrera)
+    localStorage.setItem("nombreCarrera",nombreCarrera)
     this.router.navigate(['/admin/grupos'])
   }
 }

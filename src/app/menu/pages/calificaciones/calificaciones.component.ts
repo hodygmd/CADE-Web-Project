@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
-import {Calificacion} from "../../../calificacion";
+import {Calificacion} from "../../../Classes/calificacion";
 
 @Component({
   selector: 'app-calificaciones',

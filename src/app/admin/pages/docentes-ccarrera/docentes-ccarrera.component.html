@@ -24,15 +24,12 @@
         <td>{{i.ape2Administrativo}}</td>
         <td>{{i.nombreAdministrativo}}</td>
         <td><button class="btn btn-primary text-dark buttons" (click)="docente(i.id)" routerLink="/admin/grupos-add-materias">ASIGNAR MATERIAS</button></td>
-        <td><button class="btn btn-primary text-dark buttons" (click)="update(i.id)" routerLink="/admin/actualizar-docentes">ACTUALIZAR INFORMACION</button></td>
       </tr>
       </tbody>
     </table>
   </div>
   <hr>
   <div class="d-flex sticky-bottom justify-content-between mt-3">
-    <button class="btn btn-secondary" (click)="back()" routerLink="/admin/docentes">Regresar</button>
-    <!--<button class="btn btn-secondary">Actualizar</button>!-->
-    <!--<button class="btn btn-secondary" routerLink="/menu/materias">Guardar</button>!-->
+    <button class="btn btn-secondary opciones" (click)="back()" routerLink="/admin/docentes">Regresar</button>
   </div>
 </div>

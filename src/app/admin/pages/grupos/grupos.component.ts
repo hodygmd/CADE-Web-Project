@@ -9,6 +9,7 @@ import {Router} from "@angular/router";
 })
 export class GruposComponent {
   idCarrera:any=localStorage.getItem("idCarrera")
+  nombreCarrera:any=localStorage.getItem("nombreCarrera")
 
   constructor(private service: ApiServiceService,private router: Router) {}
 

@@ -8,7 +8,7 @@
     <hr>
   </div>
   <div class="mb-3">
-    <button class="btn btn-primary text-dark buttons btn-materia col-2 p-3 m-3"
+    <button class="btn btn-primary text-dark buttons text-wrap btn-materia col-2 p-3 m-3"
             (click)="getSubject(i.claveMateriaFk.id,i.idGrupoFk.numeroGrupo)"
             *ngFor="let i of subjects">{{i.claveMateriaFk.id}}<br>
       {{i.claveMateriaFk.nombreMateria}}<br>
@@ -19,6 +19,6 @@
   </div>
   <hr>
   <div class="d-flex sticky-bottom justify-content-center mt-3">
-    <button class="btn btn-secondary" routerLink="/menu/docente-principal">Regresar</button>
+    <button class="btn btn-secondary opciones" routerLink="/menu/docente-principal">Regresar</button>
   </div>
 </div>

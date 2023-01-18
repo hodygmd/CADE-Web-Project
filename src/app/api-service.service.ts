@@ -4,7 +4,7 @@ import {PersonInterface} from './Interfaces/person-interface';
 import * as url from "url";
 import {SubjectInterface} from "./Interfaces/subject-interface";
 import {AlumnInterface} from "./Interfaces/alum-interface";
-import {Calificacion} from "./calificacion";
+import {Calificacion} from "./Classes/calificacion";
 import * as http from "http";
 import {UpdateData} from "./Classes/update-data";
 import {CareerInterface} from "./Interfaces/career-interface";
@@ -12,10 +12,14 @@ import {GroupInterface} from "./Interfaces/group-interface";
 import {AlumnoCargaInterface} from "./Interfaces/alumno-carga-interface";
 import {CargaSemestreInterface} from "./Interfaces/carga-semestre-interface";
 import {Router} from "@angular/router";
-import {ClavesCarrera} from "./claves-carrera";
-import {AllSubjects} from "./all-subjects";
-import {AddSubjects} from "./add-subjects";
-import {GruposMateria} from "./grupos-materia";
+import {ClavesCarrera} from "./Classes/claves-carrera";
+import {AllSubjects} from "./Interfaces/all-subjects";
+import {AddSubjects} from "./Classes/add-subjects";
+import {GruposMateria} from "./Interfaces/grupos-materia";
+import {AddDocentes} from "./Classes/add-docentes";
+import {AddAlumnos} from "./Classes/add-alumnos";
+import {UpdateAlumn} from "./Classes/update-alumn";
+import {UpdateAdmins} from "./Classes/update-admins";
 
 @Injectable({
   providedIn: 'root'
@@ -27,7 +31,6 @@ export class ApiServiceService {
   public carrera?:CareerInterface
   public grupo?:GroupInterface[]
   public alumno?:AlumnoCargaInterface[]
-  public updated?: UpdateData
   public carga_semestre?: CargaSemestreInterface[]
   public semestre?: Array<string>
   public emptyTeacher?: PersonInterface
@@ -36,6 +39,10 @@ export class ApiServiceService {
   public allSubject?: AllSubjects[]
   public gruposMateria?:GruposMateria[]
   public dataDocente?: PersonInterface
+  public admin?: PersonInterface
+  public allAlumns?:AlumnInterface
+  public dataAlumno?:AlumnInterface
+  public docente?: PersonInterface
 
   urlBase: string = "http://ec2-3-139-56-194.us-east-2.compute.amazonaws.com:8081"
 
@@ -94,7 +101,6 @@ export class ApiServiceService {
     this.http.put(`${this.urlBase}/administrativo/actualizar?id=${id}`, datosAct)
       .subscribe((resp: any) => {
         console.log(resp)
-        this.updated = resp
         alert("DATOS ACTUALIZADOS CORRECTAMENTE")
       }, error => {
         console.log("no se pudo master")
@@ -155,15 +161,6 @@ export class ApiServiceService {
       },error => {
         console.log("no se pudo master")
         alert("ERROR AL VALIDAR CARGA")
-      })
-  }
-  postAdmin(){
-    this.http.post(`${this.urlBase}/administrativo/registro`,'')
-      .subscribe((resp:any)=>{
-        console.log(resp)
-        this.carga_semestre=resp
-      },error => {
-        console.log("no se pudo master")
       })
   }
   getEmptyTeacher(){
@@ -236,6 +233,93 @@ export class ApiServiceService {
       .subscribe((resp:PersonInterface)=>{
         console.log(resp)
         this.dataDocente=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  postAddAdmin(claves:AddDocentes){
+    this.http.post(`${this.urlBase}/administrativo/registro`, claves)
+      .subscribe((resp: any) => {
+        console.log(resp)
+        alert("ADMINISTRATIVO AGREGADO")
+      }, error => {
+        console.log("no se pudo master")
+        alert("ERROR AL AGREGAR ADMINISTRATIVO")
+      })
+  }
+  getAdmin(){
+    this.http.get<PersonInterface>(`${this.urlBase}/administrativo/adminss`)
+      .subscribe((resp:PersonInterface)=>{
+        console.log(resp)
+        this.admin=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  getAllAlumns(){
+    this.http.get<AlumnInterface>(`${this.urlBase}/alumno`)
+      .subscribe((resp:AlumnInterface)=>{
+        console.log(resp)
+        this.allAlumns=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  postAddAlumn(claves:AddAlumnos){
+    this.http.post(`${this.urlBase}/alumno/registro`, claves)
+      .subscribe((resp: any) => {
+        console.log(resp)
+        alert("ALUMNO AGREGADO")
+      }, error => {
+        console.log("no se pudo master")
+        alert("ERROR AL AGREGAR ALUMNO")
+      })
+  }
+  getDataAlumn(numc:string){
+    this.http.get<AlumnInterface>(`${this.urlBase}/alumno/numero_control/${numc}`)
+      .subscribe((resp:AlumnInterface)=>{
+        console.log(resp)
+        this.dataAlumno=resp
+      },error => {
+        console.log("no se pudo master")
+      })
+  }
+  putUpdateAlumn(claves:UpdateAlumn,id:string){
+    this.http.put(`${this.urlBase}/alumno/actualizar?numc=${id}`,claves)
+      .subscribe((resp:any)=>{
+        console.log(resp)
+        alert("ALUMNO ACTUALIZADO CORRECTAMENTE")
+      },error => {
+        console.log("no se pudo master")
+        alert("ERROR AL ACTUALIZAR ALUMNO")
+      })
+  }
+  deleteAlumn(numc:string){
+    this.http.delete(`${this.urlBase}/alumno/borrar?numc=${numc}`)
+      .subscribe((resp:any)=>{
+        console.log(resp)
+        alert("ALUMNO ELIMINADO CORRECTAMENTE")
+        window.location.reload()
+      },error => {
+        console.log("no se pudo master")
+        alert("ERROR AL ELIMINAR ALUMNO")
+      })
+  }
+  putUpdateAdmins(datosAct: UpdateAdmins, id: string) {
+    this.http.put(`${this.urlBase}/administrativo/actualizar?id=${id}`, datosAct)
+      .subscribe((resp: any) => {
+        console.log(resp)
+        alert("DATOS ACTUALIZADOS CORRECTAMENTE")
+      }, error => {
+        console.log("no se pudo master")
+        alert("ERROR AL ACTUALIZAR DATOS")
+      })
+  }
+  getDocentes(){
+    this.http.get<PersonInterface>(`${this.urlBase}/administrativo/docentesI`)
+      .subscribe((resp:PersonInterface)=>{
+        console.log(resp)
+        this.docente=resp
       },error => {
         console.log("no se pudo master")
       })

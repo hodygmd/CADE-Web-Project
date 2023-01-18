@@ -4,11 +4,11 @@ import {UpdateData} from "../../../Classes/update-data";
 import {UpdateAdmins} from "../../../Classes/update-admins";
 
 @Component({
-  selector: 'app-actualizar-docentes',
-  templateUrl: './actualizar-docentes.component.html',
-  styleUrls: ['./actualizar-docentes.component.css']
+  selector: 'app-actualizar-administrativos',
+  templateUrl: './actualizar-administrativos.component.html',
+  styleUrls: ['./actualizar-administrativos.component.css']
 })
-export class ActualizarDocentesComponent {
+export class ActualizarAdministrativosComponent {
   idDocente: any = localStorage.getItem("idDocenteAddSubject")
 
   get dataDocente():any{
@@ -25,10 +25,9 @@ export class ActualizarDocentesComponent {
     if(ape1==""||ape2==""||contra==""||correo==""||direccion==""||nombre==""||telefono==""){
       alert("LLENE TODOS LOS CAMPOS")
     }else{
-      this.service.putUpdateAdmins(new UpdateAdmins(ape1,ape2,contra,correo,direccion,nombre,telefono),this.idDocente)
+      this.service.putUpdateAdmin(new UpdateAdmins(ape1,ape2,contra,correo,direccion,nombre,telefono),this.idDocente)
     }
   }
-
   fieldTextType?: boolean;
 
   toggleFieldTextType() {

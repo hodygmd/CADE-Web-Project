@@ -1,7 +1,7 @@
 import { Component,OnInit } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
-import {Calificacion} from "../../../calificacion";
-import {AddSubjects} from "../../../add-subjects";
+import {Calificacion} from "../../../Classes/calificacion";
+import {AddSubjects} from "../../../Classes/add-subjects";
 import {Router} from "@angular/router";
 
 @Component({

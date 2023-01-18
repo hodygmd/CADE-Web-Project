@@ -18,6 +18,13 @@ import {AsignarMateriasComponent} from "./pages/asignar-materias/asignar-materia
 import {GruposAddMateriasComponent} from "./pages/grupos-add-materias/grupos-add-materias.component";
 import {ActualizarDocentesComponent} from "./pages/actualizar-docentes/actualizar-docentes.component";
 import {AddDocenteComponent} from "./pages/add-docente/add-docente.component";
+import {AddAdministrativoComponent} from "./pages/add-administrativo/add-administrativo.component";
+import {
+  ActualizarAdministrativosComponent
+} from "./pages/actualizar-administrativos/actualizar-administrativos.component";
+import {AddAlumnoComponent} from "./pages/add-alumno/add-alumno.component";
+import {ActualizarAlumnosComponent} from "./pages/actualizar-alumnos/actualizar-alumnos.component";
+import {AllDocentesComponent} from "./pages/all-docentes/all-docentes.component";
 
 const routes: Routes=[
   {path: '',
@@ -39,6 +46,11 @@ const routes: Routes=[
       {path: 'grupos-add-materias',component:GruposAddMateriasComponent},
       {path: 'actualizar-docentes',component:ActualizarDocentesComponent},
       {path: 'add-docente',component:AddDocenteComponent},
+      {path: 'add-administrativo',component:AddAdministrativoComponent},
+      {path: 'actualizar-administrativos',component:ActualizarAdministrativosComponent},
+      {path: 'add-alumno',component:AddAlumnoComponent},
+      {path: 'actualizar-alumnos',component:ActualizarAlumnosComponent},
+      {path: 'all-docentes',component:AllDocentesComponent},
       {path: '**',redirectTo:'admin-principal'}
     ]}
 ]

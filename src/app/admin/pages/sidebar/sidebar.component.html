@@ -9,16 +9,16 @@
       </a>
     </div>
     <hr>
-    <div class="list-group list-reset">
-      <button class="btn btn-primary text-dark buttons mb-3" routerLink="actualizar-admin">Actualizar Informacion</button>
-      <button class="btn btn-primary text-dark buttons mb-3" routerLink="carreras">Cargas Academicas</button>
-      <button class="btn btn-primary text-dark buttons mb-3" routerLink="usuarios">Usuarios</button>
-      <button class="btn btn-primary text-dark buttons mb-3" routerLink="docentes">Docentes</button>
-      <button class="btn btn-primary text-dark buttons mb-3" routerLink="administrativos">Administrativos</button>
-      <button class="btn btn-primary text-dark buttons mb-3" (click)="closeSesion()" routerLink="/">Cerrar Sesion</button>
+    <div class="list-group">
+      <button class="text-dark button mb-4" routerLink="actualizar-admin"><span>Actualizar Informacion</span></button>
+      <button class="text-dark button mb-4" routerLink="carreras"><span>Cargas Academicas</span></button>
+      <button class="text-dark button mb-4" routerLink="usuarios"><span>Usuarios</span></button>
+      <button class="text-dark button mb-4" routerLink="docentes"><span>Docentes</span></button>
+      <button class="text-dark button mb-4" routerLink="administrativos"><span>Administrativos</span></button>
+      <button class="text-dark button mb-4" (click)="closeSesion()" routerLink="/"><span>Cerrar Sesion</span></button>
     </div>
   </div>
-  <div class="container">
+  <div class="container scroll cont">
     <router-outlet></router-outlet>
   </div>
 </div>

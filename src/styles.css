@@ -4,9 +4,10 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
-  /*background-image: linear-gradient(135deg, #506f83, #946070, #7a86b4, #c482c0, #7eb2ce, #e19494, #ceabee, #f6d6c5);*/
-  /*background-image: linear-gradient(135deg, #7eb2ce, #e19494, #ceabee, #f6d6c5);*/
-  background-image: linear-gradient(135deg, #104486, #137982, #008dd8, #0d94e8, #6388f3, #7cbaf7, #9bc2f9);
+  /*background-image: linear-gradient(135deg, #006691, #2499c7, #40cfff, #62afc5, #7cdaf9, #40cfff, #2499c7, #0979b0);*/
+  background: radial-gradient(ellipse at top, #3b8d9b, #2c5e9f, transparent),
+  radial-gradient(ellipse at bottom, #9e56b2, #a8447d, transparent);
+  /*background-image: linear-gradient(135deg, #00838F, #0097A7, #00ACC1, #00BCD4, #03A9F4, #039BE5, #0288D1, #0277BD);*/
   background-size: 500%;
   animation: fanimado 10s infinite;
   height: max-content;
@@ -38,20 +39,148 @@ body {
   height: 100%;
   min-height: 100vh;
   min-width: 180px;
-  /*background-color: rgb(133, 69, 83);*/
+  background-color: #884949;
   border: 2px solid black;
+  opacity: 90%;
+}
+#sidebar:hover{
+  opacity: 100%;
+}
+
+.cont {
+  opacity: 90%;
+}
+.cont:hover{
+  opacity: 100%;
+}
+
+.button{
+  background-color: #F48FB1;
+  border: 5px solid #7E57C2;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.5s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.button:hover{
+  background-color: #CE93D8;
+  border: 5px solid #29B6F6;
+  box-shadow: 0 12px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+.button span:after {
+  content: '֍';
+  /*content: '➤';*/
+  /*content: '⫸';*/
+  /*content: '(𐌱C)';*/
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+.button:hover span {
+  padding-right: 20px;
+}
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+.button:active {
+  background-color: #c94882;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .buttons{
-  background-color: rgb(134, 188, 236);
+  background-color: #CE93D8;
+  border: 5px solid #EC407A;
+  border-radius: 5px;
+  padding: 10px;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.5s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.buttons:hover{
+  background-color: #F48FB1;
+  border: 5px solid #7E57C2;
+  box-shadow: 0 12px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.buttons:active {
+  background-color: #c94882;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.opciones{
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.5s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.opciones:hover{
+  box-shadow: 0 12px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.opciones:active {
+  background-color: #c94882;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .btn-carrera{
   width: 200px;
-  height: 150px;
+  height: 170px;
 }
 
 .btn-materia{
   width: 200px;
-  height: 250px;
+  height: 300px;
 }
+
+.info{
+  background-color: #854553;
+  box-shadow: 7px 13px 37px #000;
+}
+
+.info-content{
+  background-color: rgb(134, 188, 236);
+  box-shadow: 7px 13px 20px #000;
+}
+
+.check-container{
+  background-color: #CE93D8;
+  border: 5px solid #29B6F6;
+  border-radius: 5px;
+}
+.check-container:hover{
+  background-color: #F48FB1;
+  border: 5px solid #7E57C2;
+  box-shadow: 0 12px 30px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.check-container:active {
+  background-color: #c94882;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.scroll {
+  display: block;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+input{
+  background-color: rgba(224, 157, 129, 0.89);
+}
+

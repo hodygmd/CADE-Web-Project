@@ -10,24 +10,25 @@
   <div class="d-flex flex-column mt-5">
     <div class="text-center mb-5">
       <label for="txtTelefono">TELEFONO NUEVO</label><br>
-      <input type="number" placeholder="TELEFONO" #txtTelefono (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtTelefono" value="{{respuesta.telefonoAdministrativo}}">
+      <input type="number" placeholder="TELEFONO" #txtTelefono (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtTelefono" value="{{dataDocente.telefonoAdministrativo}}">
     </div>
     <div class="text-center mb-5" >
       <label for="txtCorreo">CORREO NUEVO</label><br>
-      <input class="text-uppercase" type="email" placeholder="CORREO" #txtCorreo (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtCorreo" value="{{respuesta.correoAdministrativo}}">
+      <input class="text-uppercase" type="email" placeholder="CORREO" #txtCorreo (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtCorreo" value="{{dataDocente.correoAdministrativo}}">
     </div>
     <div class="text-center mb-5">
       <label for="txtDireccion">DIRECCION NUEVA</label><br>
-      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtDireccion" value="{{respuesta.direccionAdministrativo}}">
+      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtDireccion" value="{{dataDocente.direccionAdministrativo}}">
     </div>
     <div class="text-center mb-5">
       <label for="txtContrasenia">CONTRASEÑA NUEVA</label><br>
-      <input type="password" #txtContrasenia (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtContrasenia" value="{{respuesta.contraseniaAdministrativo}}">
+      <input [type]="fieldTextType ? 'text' : 'password'" #txtContrasenia (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtContrasenia" value="{{dataDocente.contraseniaAdministrativo}}">
+      <button (click)="toggleFieldTextType()">Ver</button>
     </div>
   </div>
   <hr>
   <div class="d-flex sticky-bottom justify-content-between mt-5">
-    <button class="btn btn-secondary" routerLink="/menu/docente-principal">Regresar</button>
-    <button class="btn btn-secondary" (click)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)">Guardar</button>
+    <button class="btn btn-secondary opciones" routerLink="/menu/docente-principal">Regresar</button>
+    <button class="btn btn-secondary opciones" (click)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)">Guardar</button>
   </div>
 </div>

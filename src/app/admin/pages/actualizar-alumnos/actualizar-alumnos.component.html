@@ -1,36 +1,59 @@
 <div class="row p-3">
   <div class="container-fluid">
     <h3 class="text-center">
-      ADMINISTRATIVOS
+      ACTUALIZAR USUARIO {{dataAlumno.nombreAlumno}}
       <img class="float-end" id="logo"
            src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAIYAhgMBEQACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAAAwQFBgcCAQj/xAA+EAABAwMCAwQHBgUCBwAAAAABAgMEAAUREiEGMUETUWFxFCJCgZGhsRUyUsHR8AcjJENyYvEWJTNTgpKT/8QAGgEBAAIDAQAAAAAAAAAAAAAAAAMFAQIEBv/EADgRAAEDAgMFBgUEAgEFAAAAAAEAAgMEERIhMQVBUWFxE5GxwdHwIjKBoeEUI0JSYvEzBhVDkqL/2gAMAwEAAhEDEQA/ANxoiKIiiIoiKIiiJtOnRbfGXJmvoYZQMqWtWAKjfK1gu4rBIAuVnl2/i3AZcUi0wXZQB/6rquzSfIbn44qPFK7QAdc/sPVcb65jflzV54bnP3Oxw58ppLLshsOFtJOEg7jn4Yranc9zLu1ufGy62OxNBKk6mWyKIiiIoiKIiiIoiKIiiIoiKImlxuEa3xy9JcCE9B1J8BXPUVLIBd2vBaSSNjbicclA2/i5Eq5pjuM9my4dKFZ3z0z51Xs2g/GC8DD4c/VckVa2STBbLck+MuOrfw3mOkekzynKWEKwE9xWen1qwdK5xwx67zuHqVPNUMiGeqxfiHiK58Qyu2uMgqSDltlOyG/IfnzoyMNOI5nj70HRVU075TmluDeH3eI74zESk9gkhchzohH6nkPPwpK4gYW6nTzP0WaeEyvtuX0WyhDTSG20hKEAJSkdAKmYwMaGjcrtd5rZF7miIoiKIiiIoiKIiiIoiKImtxmtW+I5JeOEIHxPQVBUTiBmI/TqtXvDGlx0CzO53B+5SlPyFb8kpHJA7hVCS5zi5xuSqCeZ0zsTlFz54tzTbqU65LiwiO3+JW258BkeZwO+ssi7YlugAzPL1K2gZmHn6dVSrstTt1mLU4pzVIWdSlZJ9Y75q7pxaFg5BZnJ7V3VObDYZd7kdnGGlpB/mvqHqo/U+H+9c9bXxUbMTznuG8/hSU1K+odZunFazYoTVhhei24qQknK1n7zh7ya8TPtSqlkL8ZF9wXpoKWOJmEBPvSpH/ec/wDY1zfqp/7nvKnwN4JRu4S2zs8o+Ct6mj2lVx/LIfHxWpiYdyfMXtYwH2wodSnnVvTf9RzNNpmhw5ZH08FC6nG4qWjSmpKdTKwe8dRXpqSvgq23iP03rncxzNUvXatEURFERREURFEXhOBmiKkccXHtZKIDZ9Vr1nMH2jyHw+tUdbL2k2Hc3x9+aqtoS5iMdVVwAo4JCRzJPIDqT4VyONhdV7Glzg0KofaP2jxE3J37FklTST7KUAqH0yfE1aGHsaUt3nXqTb8LrjIMotoF3wtw09eVdvIUWbe2f5jp21/6U/r0+VR7R2k2l/bZ8TzoPM+ikpqXtfjebNG9aEmbCt0dEW2sJ7NsYAT6qR455nz699eZ/RT1DzJUOzPf+F3SbUigbgp238Pymjtzluf3NH+Ax8+ddjKCnb/G/VVsm0al/wDK3TJI+lyjzlP/AP0NTfpof6DuC5/1E39z3lKouUxH94q/zAV9ajdQ07v426KZlfUs0eU7YvJ2Elof5N7fI1xTbKFrxHvXfDtl4ylF+il4csEh6K6NuqenmKrbT0jw75SFdRTQ1DfgN1ZrbPTLbwcJcHNOfnXttlbVbWNwOyePvzHvJc8sRYeSfVcKJFERREURFEXijhJJ5Vq44WklFks6QZU198/3HCfd0+VeaaSRc78+9ecmfjkc5Q3Ekr0W0rQk4cknsk/481/LA/8AKuilj7SccBn6ev0W8XwtLvoPNNODbEmUh253HKLelKmwkbKdJBSQPcSP9q22nXFjhTw5vNjyFs812U0LQwzy/KPurJIkF1CG0IS0w2MNst7JQK4oYBGcRN3HUnUrkqKl0xscmjQcFJWvh2dcQF6Qyyfbc6jwFdMUUk3/ABjLju99LqSGikkzOQUzG4dtrRIkIkvnJCTuArHPGP1ruZsz+7+6w8bldraKBmov75Jy9ZLUmN2iIBKsHKe0VsRt399TDZsV9T3qY0sH9fFM08LxZsdTkZbsZ1JwUKOpOefXfkRUM2zHNP7b79fUeigfQRO+XL373qAulomWxX9Q3ls/dcRuk1Xua5jsDxY+Kr5qZ8OZ04pm044ysLaUUqHUVo+NsjcLhcKFkj43YmmxVitVzLiwtGEPo3Keih3j9KopqeSjkEkRy3Hh195r01FXNqm4H5O96K5wZSZbCXE7Hkodxr2ezq5tZDjGRGo4H3otpGYDZOasFoiiIoiKIm1yWW7dJWNilpR+VctacNNIeRWHZArJ+lUq8woG8x3LvxDAtTRwnQNRHs6vWUr3Jx8K6YJW01NJUO92yA713xRGQxxDf5q1XBbaOzhRkhEaMnQhIPUbH9+ffVXRxOIM0nzOzWa+cPf2bPlbp5lWHhWwoWlM+anIO7Taht/kfyq1paXt/if8vj+PFTUdKAO0fru9VPwi+lz+oJ3KsDPQkkVdAAZBWG9RUrirh23y3Y1wukOI+lRPZvvhJ5jcdw2rN0Bun6JdvlRGFx5Ud9lQy04yvtdXiCKyhIGqXYLYhuJiuJUADuknOfHxrY3JuUyIyTJXpDgWl0LU2rOdStSVc/Z+Hl9dZYo5G4Xi4Wtiq3xba49mZ9OSpaIhUErwgqDRPLlvjO3WqKallikwsFwdOPTgeWar6miYBjabBQkZ5LgEiG+h1KDnW0oHSfHu9+K5ntB/bkFuR9+C4SySI4xu3hXLhq5a3UqyBrOhxPcrof3+VV1E47Prg3+DsvfQ+K9JT1AqocR+Yaq2ivarVe0RFERRE3uCO0gyEfiaUPlXNWNxU0g5HwWCLiyyUfdqlXmNy5sTITdr5diN2V+isHuUAEqPyT865qx2OOCmH8viPTX1VzF+0ySbeBYdbWUhaYZnXFiOrOlasrP+kbmurCXEMbqcvfRV1NF2soadFoMh0sAoaOkAAJAAAr0cUTWMDW6BXxKTcDz9uWYTwZkKbPYuuJ1BCuiinO+NjitiOCyFm6/4cWGYqTHlekuySFkzVukuKc/Eocj3natC2wUbXkuIVQ/hLINrc4gkPvK+yokYPKKVZSF5IGnPeNQ8dqwSQMlIWB2qnWuK+NYqu1Z4TBVtkZc5dx2rGPPX7KMMa3MFaZwwuZMsUWXdG22pz4Lim20bM5JwjB5kDYk9c1K25F1ICDok5D6bhEXCnBDkeSgtucgRkHpUEje1aWjI7uoWS0EWKw2S1Js10kMJdW3IjOqb1oODscZ99YaGzxDGMiNFQuxRPIG5XHgriT0ieiHLSUyHUnQ42AErI33HQ7Hlse4V53bWziyHtGHId46Hf4rv2dI0TW0v3H0WwW6WiZFS8jqSFDuIOCKvKKo7eFrzrvXc1wcLhOq61lFERRF4oakkHqK1e3E0t4osldZ7KUtk+w4U/OvNtPwXPBecczDIW81zCVpsafxSpsh5fucI/T4VCG4qsnc1rQPqFYVj8MDWDeSe4qS4eliBJcklsL0p07qxjO+eR7quNnw9rVNbyJ8B5qPZws5zuSsEO7m5zExyzpbcbKwrUVAjy2r0LoWtZiBvbJWdySptGUpAJKj31BZbrLeKb23KmzbJBuUSKpalJmSXH0o7JBO6E5IyojY45AnkTtE43NlE0Ft3FRtwtlsm2i28NcOXZhkrk9o4I+HVvqSnIcWtKgEgYzy6JAG2KwW58VIxxIzUfcFcYcFraVImrmw15Ulp93tW3sfeSFbKSoAE+W++DhbCVktBFlr3C05u42KLOYCksyUdqgK5hJ6GpxmFo0WFkmmRHRPU3HiqdLWylg40+WTvjwp2YstsSyv+JTCWuMJakjAdS257ykfpXJALYm8HH181U1otN1URw652N/tzg6SEA+84qLaLMdJK3/EqKmdhma7mtk4Hnlb0mMv2z2yB9fyrgoD2UmDiPuPx4LsoJi4uaequNXCsUURFEXiuRoizjimMYl9dVj1XCHU+/n8waoJI8Mj2H3fNUda3BPi45qKWyYwTHzlKCopPgpRWPkoVBAcYL958gB5LFW68luHnn5p9aYK7j28dteg4C84zyyMfOrbZkrYatpO8EeB8lNs8XLgpyy21UW45VIQ4WEFCgEYIyBzNX73RlpwNtdWgJ4qYnx0zYb0ZbrzSXUlJcYXoWkd6VDkfGoC24stln1u4CsyZa4qH7ihoasBMnx8qj7E8VG2Ql1lCy4g4K4janWe1SJ7ZQ406486t3TlQ2wlPq7D72DWuFzHZrZrwck7vd4kcUWh1iPbJcRpKklyVMZKGowSoEkdVkjbA556Vn5s7IL4rlXGzXiy2u2sWyO+stQEriglBJV2PqqJx4j31IMhZZunPozkjL8JzQ06e0TnYjPh08qktcZrF7aLM/wCIrva8VSBq1Fpttsk94SCfrXHAL4zxcfTyVTWm8v0Ch7A32l8gpHR9Kvgc/lUdcbU0nQjvyUMH/IFpfCrhZvkM5+8Sk+8VUNOGRp5j0W1CbTNWlVeK9RREUReHlRFVOLICpDKnEgl1klQ8U/v6V45z3QVz2v0J8dPG3+lDXwdrDibqFUXhrQ24ORSEnzAA+mP2K74rNJaevf8Am6on5gOHTuTZN2esvGVvjSUlqMkaXSfb7QYz5A4HuVXZRhkkJqmZkHuA178z3LviBppGxuyvr9fRXSSHIT7rjakhlxwrUlSTlJ2zjB64r0sTe0Asu8/Ckm7hKmOaIbSljwGwqWUwU4/ddbx7tVoC5xyT9i1SXDqeW20Tz0J1H41Vv2mxxtCy/vl5kKQRO3lOBZYqTl1ThV3lSRUZrKt263QDzLlns2LqTw9b5bBYksLeaURqQteQcHI28wK1M9UciT/8eiyGMCj/APhrh4zFRkpQmX6zhbDqe09YYKsZzuAN6wKmoG49zfIhZwDinbdhajNJbivvNIQAlKSnIA7tq3/7jO0fE0f+p8iVr2Q4rPuMOD5DUt6cZDb3buFWx9bJ8K69nTU9RanAs4DPePUE8CFX1NK65ffVMeFbKqLIlT5OAlllSWgeqztn3A/MVy7YpZCWU8edyL9L3+/gCooYywOeeBt1Vg4eI+24Rz/cz9a4ZaGaMBzhvb4hRUrSJ2396rTgoEbEGrFXq9oiKIiiJpOY7ROpI9YDfxFUm2KHtWdswfENeY/HqpI3WyKpbsJEG7I1IzGfXlHchfQfH61SmV01Oc/iaO9qrv07YKoXHwOOXIqO4ysK72wwqI3qmMnSB1Ug8x7jv8as9hvdTvPaZRn7Hd36dynr4hMBh+YeCtVqsj6oUcXdztnkIAXg+qT3k9auWVMxBjpvhZuJ1t74bv5XW7Y7AdpmUtdbo1ZpMKC3FBXLKksrWsNsgpGSCdznGTy5A71htKwG7/iPP343KkBton1jluzbUxJfdiuqcBOuKSWyMnGkneuoLCpt3hS0Xa6uf8guiGXkS0tznFIfjYAKU53wNtj8q1RWxV2f/wCG/tVu3vOPej9t6Gk+uTjOkbc/d7qyihLJJRcePps5lJLP2TGbCwCUhetxSk5xzGU5FAic39xcnjKwW5l15sIQ9MeLThTqQkJQEqxzBK845Ep8KyisS2UPaw4kFJOMEZFcPYCWRz9DfL6ALN7CyjZXD0N9JHZBAIxhB0jGc8uXOpmGrhdiY++d8+Nrb7nTmFoWMcLEJk1wnFYdDiHXgQCBjG2Rj86mlr62RuBzRqDkBuIP9uS0EEYN14p5u1yUMMynnXAfWQSMJHjUlO+pqyXOaA0b7a8h8R+p+i1dhjyBzVmQrUkK3GRmtdFOuqIiiIoigr9HbU2pASVaxnSOYPQjxqmk2a2Obt2ZN38B1/xO/h4azHGzAV2zDkxrctyKy0uaU5CXlEJJ8SOXl8+tT09M54BkGQ0Hr1++/gNhZvVQ1qclJ4zkQb7IcclJaEi3rQottLaVgLToBwVJUOZycEb71YWsikON7Km72tstqbTLivIfjreVhCFBQyVdN06hy60e4NzKwo5q+MRZ633bml1RSECGxpbYHPcatyrfcg9BtQx1AzMZA4nTuF3D6gBaGVnFdPXISHVPs22GFqOe1cKVE+/4Vs1sB+edo6fk+SxjduCaTOJX4qSqVdYbAHsgpUfgMmpQKP8Ai5zzy/AA7yo3SlouSAohf8RXUL0x1hwA7rcbA1eQH78qlhoY3Eue8t4C4PeSDnyGXMqA1o3JaFx1BXcUTJVubVKxoD0cYcIPs+I8KzJQYRiZKCP8svuPRbNrWnUK8Qb3AkHQmQhLmd0L2IPdVXC5zI8UgIBJN92vHh1susSsebA5qTSoKGQQana9rvlN1suXQVNqCSRnuNR1EbnxlrDYrIIvmq/Bsema6paiU89R6712QbREtOGgWIyI4KDsSH3VlFQqdFERRFy4tLaFLUcJSMmsgXNgiio8lt+b66TqAyNtk1DVjssJefg8+J5D7anlGw4nHipXpUu5bKv8TG0svw7hcW9ciKVpjnf1SrGc4/xFRgumeY4RdwzOmXvh4I54YLuVcvSbhfovaxZjYIzpbCstn3jkfPPuqFu1oNnzEObiJ3kWcOg4dO9ygdHJO27DbwWc3S33eI4RNiPoH49JUg+ShkVYs2rDUi7JB4HuOaq5YJmfO0qJJQNjpz41NicVAu2kKcOllClnuQnP0rR8gbm42WQ0nQKSiWK4SMFbJjt/jfGj4J5n3CuKTaELflOI8s/vp91v2RHzZdfRWO22yPbRqbJdkdX1jBHgkez58/pVdLPJP8+nD14+HJYMgbkzv9OHirFaYrbTK7jLGGmh/LSfaVXBVV8pcKeM66+nry6rrpIg1hqJNBpzTeGqbcLiERnXEOOqyShRASO/boKs4542MEZYHHmBme7qSoYpJZpbNNr/AGCurUZ3WWW5IUpvAUO1JUPE13RwU7WAObc8bb1cYXcVKstBtI78bnvrRkMbHFzBa6kubZpWpURREURQ/EU4RY+jIyRqOe6uqkixvuopXYQvOHY6m4npDw/mvesQeg6CuaZ4mlLh8oyHmfr4AJE3COakynSk5WQgdK4zFgabuswe9eH35qa6QchtTWCmQ2lTax9xQyMVmOAWxOFuA0t3b+NvBYNjkVW5vAcftS/Z5j8B3uCipP1z861lp3SCzrOH+Q8/wVymlAN4yWlRzsPi62AgssXFA9pGyseW351VS7LgP8S3pmPM+CCSsj4O9/RJs3d4lX2laVxlJG5WfveABGf3zqvl2dhOGJ9z0tbr7utv1+EXlZbzTGXPekKzns0DkhBwB+td8FJHCNLnifeSqZ6uSZ19BwCa5PM/E1033LmUxbbRqR6VcD2UdI1aTsVDx7hVZU13/jhzJyv6cT9lZ01Dl2s+Tff2Q76VfZSWILRSw3slOMJT4mpaSn7Ldd59/wCydVrK+SsfhjFmhWO129m25ix/5stadTrhG2DnG34cjG1XdNTdn8b/AJvDou+CBsLbDXeVNRIiI6BuVrxgrXuo++uxTpzREURFERRFF3yB6W0FpTqUgfdxz61PDJa7CbAqORtwoWJLkiWlT77h0n7h5fAVtNs+FsP7Tcxobk5jTXduUQe8OzKnJ8nEcqSNSEp1q6bdB76rmOEzgdwz+u4fTU/RdB5J8w6l1GUncHBGdwe410LKUzRFwvZBKRk8wB1rR5IaSBcoqDOs99nTHHnopKlHnrTgDoOdU7WSb2m51yVPLTVEry4j7hcNcNTCrDy22+8fePyqvl2g1pLQ0kqRmy5Tm4gKctfDbUchwpLixvrc6eQo2mrqwZjC08cvtqfsu+GjggzPxFO7pamHUpXKW4qO1guNJOAd/vHwAyfdVhBsdsT8WLd9eduAPfzW8zRNk7Th6pdiM4prsI7PocdJKcI2VkHmCOYP678qtoomRCzQshoaLAZKSZabZbCGkhKR0AxUqylKIiiIoiKIiiIoibuQo7itS2klWc5xW4keBYFYwgpVLaUjAFQsjay+EarKbPW9CtamFlh1WrC0jkTzOO+t0XCxNQPV0OZJ64wM7fIfOiJVqUpbSytktrQCdB7ulESIuOUs4bUpThQk6eQKiQd/DB+VEXqJrjiW1txHNKgg+tsUhROc+WOWetYsiT/r33EoV/ISpoEqSAcKzy+H1rKJ6mO2l1x0D1nAAvxxREtREURFERREURFERREURFERREURFERREURFERREURFERREURFERRF//2Q==">
     </h3>
     <hr>
   </div>
-  <div class="mb-3 mt-3">
-    <table class="table table-striped">
-      <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">PRIMER APELLIDO</th>
-        <th scope="col">SEGUNDO APELLIDO</th>
-        <th scope="col">NOMBRE</th>
-      </tr>
-      </thead>
-      <tbody class="table-group-divider">
-      <tr *ngFor="let i of admin;let j=index">
-        <th scope="row">{{j+1}}</th>
-        <td>{{i.ape1Administrativo}}</td>
-        <td>{{i.ape2Administrativo}}</td>
-        <td>{{i.nombreAdministrativo}}</td>
-        <td><button class="btn btn-primary text-dark buttons" (click)="update(i.id)" routerLink="/admin/actualizar-administrativos">ACTUALIZAR INFORMACION</button></td>
-      </tr>
-      </tbody>
-    </table>
+  <div class="d-flex justify-content-center text-center row mt-5">
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtApe1">PRIMER APELLIDO</label><br>
+      <input type="text" class="text-uppercase" placeholder="PRIMER APELLIDO" #txtApe1 (keyup.enter)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)" id="txtApe1" value="{{dataAlumno.ape1Alumno}}">
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtApe2">SEGUNDO APELLIDO</label><br>
+      <input type="text" class="text-uppercase" placeholder="SEGUNDO APELLIDO" #txtApe2 (keyup.enter)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)" id="txtApe2" value="{{dataAlumno.ape2Alumno}}">
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtNom">NOMBRE</label><br>
+      <input type="text" class="text-uppercase" placeholder="NOMBRE" #txtNom (keyup.enter)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)" id="txtNom" value="{{dataAlumno.nombreAlumno}}">
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtTelefono">TELEFONO</label><br>
+      <input type="number" placeholder="TELEFONO" #txtTelefono (keyup.enter)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)" id="txtTelefono" value="{{dataAlumno.telefonoAlumno}}">
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtCorreo">CORREO</label><br>
+      <input type="email" placeholder="CORREO" #txtCorreo (keyup.enter)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)" id="txtCorreo" value="{{dataAlumno.correoAlumno}}">
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtDireccion">DIRECCION</label><br>
+      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion (keyup.enter)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)" id="txtDireccion" value="{{dataAlumno.direccionAlumno}}">
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtContrasenia">CONTRASEÑA</label><br>
+      <input [type]="fieldTextType ? 'text' : 'password'" #txtContrasenia id="txtContrasenia" (keyup.enter)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)" value="{{dataAlumno.contraseniaAlumno}}">
+      <button (click)="toggleFieldTextType()">Ver</button>
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtFecha">FECHA DE NACIMIENTO</label><br>
+      <input type="date" [(ngModel)]="fecha" #txtFecha id="txtFecha">
+    </div>
+    <div class="col-3 mx-3 mb-5 buttons">
+      <div class="flex-column">
+        <label>GENERO</label>
+        <div *ngFor="let c of opciones">
+          <label class="text-dark" for="{{c}}">{{c}}</label>&nbsp;
+          <input id="{{c}}" [value]="c" type="radio" name="options" [(ngModel)]="genero">
+        </div>
+      </div>
+    </div>
   </div>
   <hr>
-  <div class="d-flex sticky-bottom justify-content-between mt-3">
-    <button class="btn btn-secondary opciones" routerLink="/admin/admin-principal">Regresar</button>
-    <button class="btn btn-secondary opciones" routerLink="/admin/add-administrativo">Nuevo Administrativo</button>
+  <div class="d-flex sticky-bottom justify-content-between mt-5">
+    <button class="btn btn-secondary opciones" routerLink="/admin/usuarios">Regresar</button>
+    <button class="btn btn-secondary opciones" (click)="save(txtApe1.value,txtApe2.value,txtContrasenia.value,txtCorreo.value,txtDireccion.value,txtNom.value,txtTelefono.value)">Guardar</button>
   </div>
 </div>

@@ -10,12 +10,12 @@
         </div>
         <hr>
         <div class="list-group list-reset">
-            <button class="btn btn-primary text-dark buttons mb-3" routerLink="actualizar-docente">Actualizar Informacion</button>
-            <button class="btn btn-primary text-dark buttons mb-3" routerLink="materias">Calificaciones</button>
-            <button class="btn btn-primary text-dark buttons mb-3" (click)="closeSesion()" routerLink="/">Cerrar Sesion</button>
+            <button class="btn btn-primary text-dark button mb-4" routerLink="actualizar-docente"><span>Actualizar Informacion</span></button>
+            <button class="btn btn-primary text-dark button mb-4" routerLink="materias"><span>Calificaciones</span></button>
+            <button class="btn btn-primary text-dark button mb-4" (click)="closeSesion()" routerLink="/"><span>Cerrar Sesion</span></button>
         </div>
     </div>
-    <div class="container">
+    <div class="container scroll cont">
         <router-outlet></router-outlet>
     </div>
 </div>

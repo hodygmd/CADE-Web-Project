@@ -7,28 +7,29 @@
     </h3>
     <hr>
   </div>
-  <div class="d-flex flex-column mt-5">
-    <div class="text-center mb-5">
-      <label for="txtTelefono">TELEFONO NUEVO</label><br>
-      <input type="number" placeholder="TELEFONO" #txtTelefono (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtTelefono" value="{{respuesta.telefonoAdministrativo}}">
+  <div class="d-flex justify-content-center text-center row mt-5">
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtTelefono">TELEFONO</label><br>
+      <input type="number" placeholder="TELEFONO" #txtTelefono (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtTelefono" value="{{dataDocente.telefonoAdministrativo}}">
     </div>
-    <div class="text-center mb-5" >
-      <label for="txtCorreo">CORREO NUEVO</label><br>
-      <input class="text-uppercase" type="email" placeholder="CORREO" #txtCorreo (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtCorreo" value="{{respuesta.correoAdministrativo}}">
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtCorreo">CORREO</label><br>
+      <input class="text-uppercase" type="email" placeholder="CORREO" #txtCorreo (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtCorreo" value="{{dataDocente.correoAdministrativo}}">
     </div>
-    <div class="text-center mb-5">
-      <label for="txtDireccion">DIRECCION NUEVA</label><br>
-      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtDireccion" value="{{respuesta.direccionAdministrativo}}">
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtDireccion">DIRECCION</label><br>
+      <input class="text-uppercase" type="text" placeholder="DIRECCION" #txtDireccion (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" id="txtDireccion" value="{{dataDocente.direccionAdministrativo}}">
     </div>
-    <div class="text-center mb-5">
-      <label for="txtContrasenia">CONTRASEÑA NUEVA</label><br>
-      <input type="password" #txtContrasenia id="txtContrasenia" (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" value="{{respuesta.contraseniaAdministrativo}}">
+    <div class="col-3 mx-3 mb-5 buttons">
+      <label for="txtContrasenia">CONTRASEÑA</label><br>
+      <input [type]="fieldTextType ? 'text' : 'password'" #txtContrasenia id="txtContrasenia" (keyup.enter)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)" value="{{dataDocente.contraseniaAdministrativo}}">
+      <button (click)="toggleFieldTextType()">Ver</button>
     </div>
   </div>
   <hr>
   <div class="d-flex sticky-bottom justify-content-between mt-5">
-    <button class="btn btn-secondary" routerLink="/admin/admin-principal">Regresar</button>
-    <button class="btn btn-secondary" (click)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)">Guardar</button>
+    <button class="btn btn-secondary opciones" routerLink="/admin/admin-principal">Regresar</button>
+    <button class="btn btn-secondary opciones" (click)="save(txtTelefono.value,txtCorreo.value,txtDireccion.value,txtContrasenia.value)">Guardar</button>
   </div>
 </div>
 

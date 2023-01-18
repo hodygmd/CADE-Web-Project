@@ -8,6 +8,7 @@
     <hr>
   </div>
   <div class="mb-3">
+    <h5 class="text-center mb-3">SELECCIONAR CARRERA</h5>
     <button class="btn btn-primary text-dark buttons btn-carrera col-2 p-3 m-3" (click)="next(i.descripcionCarrera,i.id)" *ngFor="let i of carrera" routerLink="/admin/docentes-ccarrera">{{i.id}}<br>
     {{i.descripcionCarrera}}</button>
   </div>
@@ -36,8 +37,8 @@
   </div>
   <hr>
   <div class="d-flex sticky-bottom justify-content-between mt-3">
-    <button class="btn btn-secondary" routerLink="/admin/admin-principal">Regresar</button>
-    <!--<button class="btn btn-secondary">Actualizar</button>!-->
-    <button class="btn btn-secondary" routerLink="/admin/add-docente">Nuevo Docente</button>
+    <button class="btn btn-secondary opciones" routerLink="/admin/admin-principal">Regresar</button>
+    <button class="btn btn-secondary opciones" routerLink="/admin/all-docentes">Ver Todos los Docentes</button>
+    <button class="btn btn-secondary opciones" routerLink="/admin/add-docente">Nuevo Docente</button>
   </div>
 </div>

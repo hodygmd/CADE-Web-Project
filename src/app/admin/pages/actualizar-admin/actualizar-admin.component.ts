@@ -1,6 +1,6 @@
 import { Component,OnInit } from '@angular/core';
 import {ApiServiceService} from "../../../api-service.service";
-import {Calificacion} from "../../../calificacion";
+import {Calificacion} from "../../../Classes/calificacion";
 import {UpdateData} from "../../../Classes/update-data";
 
 @Component({
@@ -11,21 +11,14 @@ import {UpdateData} from "../../../Classes/update-data";
 export class ActualizarAdminComponent implements OnInit{
   idDocente: any = localStorage.getItem("idDocente")
 
-  datos:Array<string>=[]
-
-  get updated():any{
-    return this.service.updated
-  }
-
-  get respuesta():any{
-    return this.service.respuesta
+  get dataDocente():any{
+    return this.service.dataDocente
   }
 
   constructor(private service:ApiServiceService) {}
 
   ngOnInit(): void {
-    this.datos.push(this.respuesta.telefonoAdministrativo,this.respuesta.correoAdministrativo,this.respuesta.direccionAdministrativo,this.respuesta.contraseniaAdministrativo)
-    console.log(this.datos)
+    this.service.getDataDocente(this.idDocente)
   }
 
   save(telefono:string,correo:string,direccion:string,contrasenia:string){
@@ -33,13 +26,11 @@ export class ActualizarAdminComponent implements OnInit{
       alert("LLENE TODOS LOS CAMPOS")
     }else{
       this.service.putUpdateAdmin(new UpdateData(telefono,correo,direccion,contrasenia),this.idDocente)
-      this.update()
     }
   }
-  update(){
-    this.datos[0]=this.updated.telefonoAdministrativo
-    this.datos[1]=this.updated.correoAdministrativo
-    this.datos[2]=this.updated.direccionAdministrativo
-    this.datos[3]=this.updated.contraseniaAdministrativo
+  fieldTextType?: boolean;
+
+  toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
   }
 }
