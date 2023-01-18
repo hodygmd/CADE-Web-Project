@@ -57,7 +57,7 @@ body {
 .button{
   background-color: #F48FB1;
   border: 5px solid #7E57C2;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   text-decoration: none;
   display: inline-block;
@@ -77,9 +77,9 @@ body {
   transition: 0.5s;
 }
 .button span:after {
-  content: '֍';
+  /*content: '֍';*/
   /*content: '➤';*/
-  /*content: '⫸';*/
+  content: '⫸';
   /*content: '(𐌱C)';*/
   position: absolute;
   opacity: 0;
@@ -181,6 +181,6 @@ body {
   scroll-behavior: smooth;
 }
 input{
-  background-color: rgba(224, 157, 129, 0.89);
+  background-color: rgba(129, 216, 224, 0.89);
 }
 

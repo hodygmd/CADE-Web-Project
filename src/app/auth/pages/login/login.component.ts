@@ -26,4 +26,9 @@ export class LoginComponent implements OnInit {
       this.service.auth(nombre, contra)
     }
   }
+  fieldTextType?: boolean;
+
+  toggleFieldTextType() {
+    this.fieldTextType = !this.fieldTextType;
+  }
 }
