@@ -157,7 +157,7 @@ export class ApiServiceService {
       .subscribe((resp:any)=>{
         console.log(resp)
         this.carga_semestre=resp
-        alert("CARGA VALIDADA CORRECTAMENTE")
+        alert("OPERACION REALIZADA")
       },error => {
         console.log("no se pudo master")
         alert("ERROR AL VALIDAR CARGA")

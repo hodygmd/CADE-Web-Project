@@ -7,7 +7,7 @@
       <hr>
       <div class="d-flex">
         <input class="controls" [type]="fieldTextType ? 'text' : 'password'"
-               (keydown.enter)="sesion(txtNombre.value,txtContra.value)" required type="password" #txtContra>
+               (keyup.enter)="sesion(txtNombre.value,txtContra.value)" required type="password" #txtContra>
         <button style="height: 70%" (click)="toggleFieldTextType()">Ver</button>
       </div>
 
